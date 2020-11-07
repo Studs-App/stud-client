@@ -1,6 +1,6 @@
 <template>
   <div>
-    <StudySessionTable parent="Scandanavia" />
+    <StudySessionTable />
   </div>
 </template>
 

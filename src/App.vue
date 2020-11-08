@@ -1,4 +1,4 @@
-<template v-for="i in 40">
+<template>
   <v-app id="inspire">
     <v-app-bar app color="blue" flat>
       <v-avatar

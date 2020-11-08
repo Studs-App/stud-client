@@ -1,23 +1,17 @@
 <template>
-  <v-card height="268px">
-    <v-toolbar card>
+  <v-card height="268px" class="homeCard">
+    <v-app-bar flat>
       <v-toolbar-title>Suggested Friends</v-toolbar-title>
-    </v-toolbar>
+    </v-app-bar>
 
-    <v-card-text flex-grow-1 over class="overflow-false">
-      <v-list allow-overflow="false">
-        <template v-for="bud in buds">
-          <v-list-tile :key="bud">
-            <v-list-tile-content>
-              <strong
-                ><div class=" my-5">
-                  {{ bud }}
-                </div></strong
-              >
-              <v-divider></v-divider>
-            </v-list-tile-content>
-          </v-list-tile>
-        </template>
+    <v-card-text flex-grow-1 over class="overflow-false homeCard_text">
+      <v-list allow-overflow="false" v-for="bud in buds" v-bind:key="bud">
+        <strong>
+          <div class=" my-5">
+            {{ bud }}
+          </div>
+        </strong>
+        <v-divider></v-divider>
       </v-list>
     </v-card-text>
   </v-card>
@@ -43,12 +37,12 @@ export default class SuggestBudsCard extends Vue {
 </script>
 
 <style>
-.v-card {
+.homeCard {
   display: flex !important;
   flex-direction: column;
 }
 
-.v-card__text {
+.homeCard_text {
   flex-grow: 1;
   overflow: auto;
 }

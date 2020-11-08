@@ -13,14 +13,14 @@ const routes: Array<RouteConfig> = [
     children: [
       {
         path: "/map",
-        name: "Map",
+        name: "HomeMap",
         component: HomeMap
       },
       {
         path: "/list",
         name: "List",
         component: () =>
-          import(/* webpackChunkName: "List" */ "@/components/HomeList.vue")
+          import(/* webpackChunkName: "List" */ "@/components/HomeList.vue") 
       }
     ]
   },

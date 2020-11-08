@@ -34,7 +34,9 @@
               rounded="lg"
               min-height="268"
               v-if="this.$route.path !== '/profile'"
-            ></v-sheet>
+            >
+              <SuggestBudsCard />
+            </v-sheet>
           </v-col>
 
           <v-col cols="12" sm="8">
@@ -48,7 +50,9 @@
               rounded="lg"
               min-height="268"
               v-if="this.$route.path !== '/profile'"
-            ></v-sheet>
+            >
+              <RecentFeedCard />
+            </v-sheet>
           </v-col>
         </v-row>
       </v-container>
@@ -59,7 +63,15 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 
-@Component
+import SuggestBudsCard from "@/components/SuggestBudsCard.vue";
+import RecentFeedCard from "@/components/RecentFeedCard.vue";
+
+@Component({
+  components: {
+    SuggestBudsCard,
+    RecentFeedCard
+  }
+})
 export default class App extends Vue {
   links: any[] = [
     {

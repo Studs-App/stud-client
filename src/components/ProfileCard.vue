@@ -8,85 +8,51 @@
       elevation="2"
     >
       <v-container>
-        <v-row no-gutters>
+        <v-row no-gutters align="center" justify="start">
           <v-col cols="12" sm="4">
             <v-card class="pa-2" elevation="0">
-              {{ profile.firstName }}
+              <h3>{{ profile.firstName }} {{ profile.lastName }}</h3>
             </v-card>
           </v-col>
-          <v-col cols="12" sm="4">
-            <v-card class="pa-2" elevation="0">
-              One of three columns
-            </v-card>
+          <v-col cols="12" sm="4" align="center" justify="center">
+            <v-avatar size="55">
+              <img :src="profile.pictureUrl" alt="John" />
+            </v-avatar>
           </v-col>
-          <v-col cols="12" sm="4">
+          <v-col cols="12" sm="4" align="start" justify="end">
             <v-card class="pa-2" elevation="0">
-              One of three columns
+              <strong>Studies:</strong>
             </v-card>
           </v-col>
         </v-row>
       </v-container>
 
-      <v-container>
+      <v-container align="end" justify="end">
         <v-row no-gutters>
           <v-col cols="12" sm="4">
             <v-card class="pa-2" elevation="0">
-              One of three columns
+              Studying {{ profile.major }} Class of 2020 at {{ profile.school }}
             </v-card>
           </v-col>
-          <v-col cols="12" sm="4">
+          <v-col cols="12" sm="4" align="center" justify="center">
             <v-card class="pa-2 " elevation="0">
-              One of three columns
+              Studs: {{ profile.studsCount }}
             </v-card>
           </v-col>
-          <v-col cols="12" sm="4">
+          <v-col cols="12" sm="4" align="start" justify="end">
             <v-card class="pa-2" elevation="0">
-              One of three columns
+              <v-btn
+                color="primary"
+                class="pa-1 ma-1"
+                v-for="studyTag in profile.studyTags"
+                :key="studyTag.message"
+              >
+                {{ studyTag }}
+              </v-btn>
             </v-card>
           </v-col>
         </v-row>
       </v-container>
-
-      <!-- <v-container>
-        <v-row>
-          <v-col align-self="start" class="pa-2">
-            One of three columns
-          </v-col>
-        </v-row>
-
-        <v-list-item-avatar
-          tile
-          size="80"
-          color="grey"
-          class="d-flex justify-center"
-        ></v-list-item-avatar>
-
-        <v-row>
-          <v-col align-self="end" class="pa-2">
-            One of three columns
-          </v-col>
-        </v-row>
-      </v-container> -->
-      <!-- <v-list-item>
-        <v-list-item-content>
-          <v-list-item-title class="headline mb-1, spacing-playground pa-6">
-            Headline 5
-          </v-list-item-title>
-        </v-list-item-content>
-
-        <v-list-item-avatar
-          tile
-          size="80"
-          color="grey"
-          class="d-flex justify-center mb-6"
-        ></v-list-item-avatar>
-      </v-list-item>
-
-      <v-card-actions>
-        <v-list-item-subtitle class="spacing-playground pa-6"
-          >Greyhound divisely hello coldly fonwderfully</v-list-item-subtitle
-        >
-      </v-card-actions> -->
     </v-card>
   </v-container>
 </template>

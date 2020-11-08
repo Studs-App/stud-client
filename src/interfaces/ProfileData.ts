@@ -1,11 +1,13 @@
 export interface ProfileData {
-  ID: string,
-  firstName: string,
-  lastName: string,
-  authenticatorId: string,
-  major: string,
-  school: string,
-  studsCount: string,
-  pictureUrl: string,
-  studs: string[],
+  ID: number;
+  buds: string[];
+  description: string[];
+  duration: string;
+  firstName: string;
+  lastName: string;
+  pictureUrl: string;
+  authenticator_id: string;
+  major: string;
+  school: string;
+  studs: string[];
 }

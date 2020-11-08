@@ -88,7 +88,7 @@ export default class Post extends Vue {
   submitStudySession(studySessionData: NewStudySessionData){
     axios.post('http://localhost:3030/create/studySession/', studySessionData)
       .then(response=>{
-        console.log(response)
+        console.log(response.data)
     }).catch(error=>{
       console.log('ERROR: ', error)
     })

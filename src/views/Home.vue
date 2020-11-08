@@ -37,7 +37,7 @@ export default class Home extends Vue {
   options: RouteName[] = [
     {
       name: "Map",
-      path: "/home"
+      path: "/map"
     },
     {
       name: "List",

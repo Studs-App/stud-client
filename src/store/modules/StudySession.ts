@@ -8,8 +8,6 @@ export default class StudySession extends VuexModule {
     @Mutation
     setStudySessionData(studySessionData: StudySessionData[]): void {
         this.studySessionData = studySessionData;
-        console.log(this.studySessionData);
-        console.log("Mutation Statement");
     }
 
     @Action({ rawError: true })

@@ -15,6 +15,11 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+import { namespace } from "vuex-class";
+const studySession = namespace("StudySession");
+
+import axios from "axios";
+import { StudySessionData } from '../interfaces/StudySessionData';
 export interface RouteName{
   name: string;
   path: string;
@@ -33,7 +38,25 @@ export default class Home extends Vue {
       path: "/list"
     }
   ];
+
+
+  @studySession.Action updateStudySessionData!: (
+    updateStudySessionData: StudySessionData[]
+  ) => void;
+
+
+  created() {
+    axios.get("http://localhost:3030/get/studySession/all")
+      .then(response => {
+        this.updateStudySessionData(response.data)
+      })
+      .catch(error => {
+        console.log('ERROR: ', error)
+      })
+  }
 }
+
+
 </script>
 
 <style></style>

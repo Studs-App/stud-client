@@ -2,9 +2,7 @@ import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import Home from "../views/Home.vue";
 import Profile from "../views/Profile.vue";
-import { compile, component } from 'vue/types/umd';
-
-
+import HomeMap from "@/components/HomeMap.vue";
 Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [
@@ -16,30 +14,27 @@ const routes: Array<RouteConfig> = [
       {
         path: "/map",
         name: "Map",
-        component: () =>
-          import(/* webpackChunkName: "Map" */ "@/components/HomeMap.vue")
+        component: HomeMap
       },
       {
         path: "/list",
         name: "List",
         component: () =>
-          import(/* webpackChunkName: "List" */ "../components/HomeList.vue") 
+          import(/* webpackChunkName: "List" */ "@/components/HomeList.vue")
       }
     ]
   },
   {
     path: "/profile",
     name: "Profile",
-    component: () =>
-      import(/* webpackChunkName: "Profile" */ "../views/Profile.vue")
+    component: Profile
   },
   {
     path: "/post",
     name: "CreatePost",
     component: () =>
       import(/* webpackChunkName: "CreatePost" */ "../views/CreatePost.vue")
-  },
-
+  }
 ];
 
 const router = new VueRouter({

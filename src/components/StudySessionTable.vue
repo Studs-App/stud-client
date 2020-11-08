@@ -17,11 +17,9 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import Component from "vue-class-component";
-
+import { Component, Vue } from "vue-property-decorator";
 import { namespace } from "vuex-class";
-import { StudySessionData } from "@/interfaces/StudySessionData";
+import { StudySessionData } from "@/interfaces/StudySessionData.ts";
 
 const studySession = namespace("StudySession");
 
@@ -37,7 +35,7 @@ export default class StudySessionTable extends Vue {
 
   mounted() {
     this.studySessions = this.studySessionData;
-    console.log("Component");
+    console.log("Component: ", this.studySessions);
   }
 
   tableHandlers: any = [

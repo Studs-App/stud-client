@@ -7,10 +7,7 @@
 import { Component, Vue } from "vue-property-decorator";
 
 @Component
-export default class HomeMap extends Vue{
-
-}
+export default class HomeMap extends Vue {}
 </script>
 
-<style>
-</style>
+<style></style>

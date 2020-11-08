@@ -89,5 +89,4 @@ export default class ProfileCard extends Vue {
 }
 </script>
 
-<style>
-</style>
+<style></style>

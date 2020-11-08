@@ -25,7 +25,7 @@ const studySession = namespace("StudySession");
 @Component
 export default class HomeList extends Vue {
   @studySession.State(state => state.studySessionData)
-  studySessions!: StudySessionData[]
+  studySessions!: StudySessionData[];
 
   private expanded: [] = [];
   private singleExpand: false | undefined;
@@ -34,18 +34,18 @@ export default class HomeList extends Vue {
       text: "Study Session",
       align: "start",
       sortable: false,
-      value: "title",
+      value: "title"
     },
     { text: "Location", value: "location" },
     { text: "Status", value: "status" },
     { text: "Buds", value: "buds" },
     { text: "Duration", value: "duration" },
     { text: "Date", value: "studyDate" },
-    { text: "", value: "data-table-expand" },
+    { text: "", value: "data-table-expand" }
   ];
 
   beforeMount() {
-    console.log('mount: ', this.studySessions)
+    console.log("mount: ", this.studySessions);
   }
 }
 </script>

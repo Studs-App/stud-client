@@ -3,7 +3,12 @@
     <v-container>
       <v-row>
         <v-tabs>
-          <v-tab v-for="(option, index) in options" :key="index" :to="option.path">{{ option.name }}</v-tab>
+          <v-tab
+            v-for="(option, index) in options"
+            :key="index"
+            :to="option.path"
+            >{{ option.name }}</v-tab
+          >
         </v-tabs>
       </v-row>
       <v-row>
@@ -19,15 +24,14 @@ import { namespace } from "vuex-class";
 const studySession = namespace("StudySession");
 
 import axios from "axios";
-import { StudySessionData } from '../interfaces/StudySessionData';
-export interface RouteName{
+import { StudySessionData } from "../interfaces/StudySessionData";
+export interface RouteName {
   name: string;
   path: string;
 }
 
 @Component
 export default class Home extends Vue {
-
   options: RouteName[] = [
     {
       name: "Map",
@@ -39,24 +43,21 @@ export default class Home extends Vue {
     }
   ];
 
-
   @studySession.Action updateStudySessionData!: (
     updateStudySessionData: StudySessionData[]
   ) => void;
 
-
   created() {
-    axios.get("http://localhost:3030/get/studySession/all")
+    axios
+      .get("http://localhost:3030/get/studySession/all")
       .then(response => {
-        this.updateStudySessionData(response.data)
+        this.updateStudySessionData(response.data);
       })
       .catch(error => {
-        console.log('ERROR: ', error)
-      })
+        console.log("ERROR: ", error);
+      });
   }
 }
-
-
 </script>
 
 <style></style>

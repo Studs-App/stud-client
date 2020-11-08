@@ -24,10 +24,19 @@
 
       <v-col cols="5">
         <v-subheader class="pl-0">Preferred Distance</v-subheader>
-        <v-slider v-model="slider" :thumb-size="24" thumb-label="sometimes"></v-slider>
+        <v-slider
+          v-model="slider"
+          :thumb-size="24"
+          thumb-label="sometimes"
+        ></v-slider>
       </v-col>
 
-      <v-text-field v-model="email" :error-messages="errors" label="Invite Studs" required></v-text-field>
+      <v-text-field
+        v-model="email"
+        :error-messages="errors"
+        label="Invite Studs"
+        required
+      ></v-text-field>
       <v-menu
         ref="menu"
         v-model="menu"

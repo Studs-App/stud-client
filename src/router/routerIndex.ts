@@ -2,7 +2,7 @@ import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import Home from "../views/Home.vue";
 import Profile from "../views/Profile.vue";
-import HomeMap from "@/components/HomeMap.vue"
+import HomeMap from "@/components/HomeMap.vue";
 Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [
@@ -20,7 +20,7 @@ const routes: Array<RouteConfig> = [
         path: "/list",
         name: "List",
         component: () =>
-          import(/* webpackChunkName: "List" */ "@/components/HomeList.vue") 
+          import(/* webpackChunkName: "List" */ "@/components/HomeList.vue")
       }
     ]
   },
@@ -34,8 +34,7 @@ const routes: Array<RouteConfig> = [
     name: "CreatePost",
     component: () =>
       import(/* webpackChunkName: "CreatePost" */ "../views/CreatePost.vue")
-  },
-
+  }
 ];
 
 const router = new VueRouter({

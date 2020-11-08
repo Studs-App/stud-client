@@ -23,7 +23,7 @@ import { StudySession } from "@/interfaces/StudySession";
 
 @Component
 export default class StudySessionTable extends Vue {
-  public studySessions: StudySession[] = [
+  studySessions: StudySession[] = [
     {
       title: "Computer Science",
       location: "Northridge",
@@ -76,7 +76,7 @@ export default class StudySessionTable extends Vue {
 
   private expanded: [] = [];
   private singleExpand: false | undefined;
-  public tableHandlers: any = [
+  tableHandlers: any = [
     {
       text: "Study Session",
       align: "start",

@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import Home from "../views/Home.vue";
+import HomeMap from "../components/HomeMap.vue";
 import Profile from "../views/Profile.vue";
 import { compile, component } from 'vue/types/umd';
 
@@ -15,15 +16,14 @@ const routes: Array<RouteConfig> = [
     children: [
       {
         path: "/map",
-        name: "Map",
-        component: () =>
-          import(/* webpackChunkName: "Map" */ "@/components/HomeMap.vue")
+        name: "HomeMap",
+        component: HomeMap
       },
       {
         path: "/list",
         name: "List",
         component: () =>
-          import(/* webpackChunkName: "List" */ "../components/HomeList.vue") 
+          import(/* webpackChunkName: "List" */ "@/components/HomeList.vue") 
       }
     ]
   },

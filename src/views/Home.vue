@@ -16,18 +16,20 @@
         <router-view></router-view>
       </v-row>
     </v-container>
+     
   </v-main>
+  
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-
 export default Vue.extend({
+  
   data: () => ({
     options: [
       {
-        name: "Map",
-        path: "/home",
+        name: "HomeMap",
+        path: "/map",
       },
       {
         name: "List",

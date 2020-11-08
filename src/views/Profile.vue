@@ -25,7 +25,7 @@ const studySession = namespace("StudySession");
   }
 })
 export default class Profile extends Vue {
-  id = 10;
+  id = 9;
 
   @profile.Action updateProfileData!: (
     updateProfileData: ProfileData[]

@@ -7,25 +7,22 @@
       ></v-avatar>
 
       <v-tabs left class="ml-n9" color="white">
-        <v-tab disabled v="title" :key="title">
-          {{ title }}
+        <v-tab disabled v="title">
+          Studs
         </v-tab>
       </v-tabs>
 
       <v-tabs centered class="ml-n9" color="white">
-        <v-tab v-for="link in links" :key="link" :to="link.path">
+        <v-tab v-for="(link, index) in links" :key="index" :to="link.path">
           {{ link.name }}
         </v-tab>
       </v-tabs>
-      <router-view></router-view>
 
       <v-tabs right class="ml-n9" color="white">
-        <v-tab v="profile" :key="profile" :to="profile.path">
+        <v-tab v="profile" :to="profile.path">
           {{ profile.name }}
         </v-tab>
       </v-tabs>
-      <router-view></router-view>
-
       <v-avatar
         class="hidden-sm-and-down"
         color="grey shrink"
@@ -37,23 +34,19 @@
       <v-container>
         <v-row>
           <v-col cols="12" sm="2">
-            <v-sheet rounded="lg" min-height="268">
-            </v-sheet>
+            <v-sheet rounded="lg" min-height="268"> </v-sheet>
           </v-col>
 
           <v-col cols="12" sm="8">
-            <v-sheet min-height="70vh" rounded="lg">
-            </v-sheet>
+            <v-sheet min-height="70vh" rounded="lg"> <router-view /> </v-sheet>
           </v-col>
 
           <v-col cols="12" sm="2">
-            <v-sheet rounded="lg" min-height="268">
-            </v-sheet>
+            <v-sheet rounded="lg" min-height="268"> </v-sheet>
           </v-col>
         </v-row>
       </v-container>
     </v-main>
-    
   </v-app>
 </template>
 
@@ -63,22 +56,21 @@ import Vue from "vue";
 export default Vue.extend({
   name: "App",
 
-
   data: () => ({
     links: [
       {
         name: "Create Post",
-        path: "/post",
+        path: "/post"
       },
       {
         name: "Home",
-        path: "/Home",
-      },
+        path: "/home"
+      }
     ],
     profile: {
       name: "Deion",
-      path: "/profile",
-    },
-  }),
+      path: "/profile"
+    }
+  })
 });
 </script>

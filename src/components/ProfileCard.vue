@@ -11,12 +11,12 @@
         <v-row no-gutters align="center" justify="start">
           <v-col cols="12" sm="4">
             <v-card class="pa-2" elevation="0">
-              <h3>{{ profile.first_name }} {{ profile.last_name }}</h3>
+              <h3>{{ profile.firstName }} {{ profile.lastName }}</h3>
             </v-card>
           </v-col>
           <v-col cols="12" sm="4" align="center" justify="center">
             <v-avatar size="55">
-              <img :src="profile.picture_url" />
+              <img :src="profile.pictureUrl" />
             </v-avatar>
           </v-col>
           <v-col cols="12" sm="4" align="start" justify="end">
@@ -36,7 +36,7 @@
           </v-col>
           <v-col cols="12" sm="4" align="center" justify="center">
             <v-card class="pa-2 " elevation="0">
-              Buds: {{ profile.budsCount }}
+              Buds: {{ profile.buds.length }}
             </v-card>
           </v-col>
           <v-col cols="12" sm="4" align="start" justify="end">
@@ -72,7 +72,8 @@ export default class ProfileCard extends Vue {
   public profile!: ProfileData;
 
   beforeMount() {
-    console.log("mount: ", this.profile);
+
+    console.log("MOUNTED: ", this.profile);
   }
 }
 </script>

@@ -15,7 +15,9 @@
         <router-view></router-view>
       </v-row>
     </v-container>
+     
   </v-main>
+  
 </template>
 
 <script lang="ts">
@@ -35,7 +37,7 @@ export default class Home extends Vue {
   options: RouteName[] = [
     {
       name: "Map",
-      path: "/home"
+      path: "/map"
     },
     {
       name: "List",

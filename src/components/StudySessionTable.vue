@@ -3,7 +3,6 @@
     <v-data-table
       :headers="tableHandlers"
       :items="studySessions"
-      :single-expand="singleExpand"
       :expanded.sync="expanded"
       item-key="title"
       :items-per-page="5"

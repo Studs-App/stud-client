@@ -11,12 +11,16 @@
     >
       <template v-slot:expanded-item="{ headers, item }">
         <td :colspan="headers.length">
+          <v-container tra>
+            <Home-Map />
+          </v-container>
+
           <v-row no-gutters align="center" justify="start">
             <v-col cols="12" sm="4">
-              <v-card class="pa-2" elevation="0"
-                ><strong
-                  ><h3>Studied for {{ item.title }}</h3></strong
-                >
+              <v-card class="pa-2" elevation="0">
+                <strong
+                  ><h3>Studied for {{ item.title }}</h3>
+                </strong>
               </v-card>
             </v-col>
 
@@ -53,10 +57,15 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import { StudySessionData } from "@/interfaces/StudySessionData.ts";
+import HomeMap from "@/components/HomeMap.vue";
 import { namespace } from "vuex-class";
 const studySession = namespace("StudySession");
 
-@Component
+@Component({
+  components: {
+    HomeMap
+  }
+})
 export default class StudySessionTable extends Vue {
   @studySession.State(state => state.studySessionData)
   studySessions!: StudySessionData[];

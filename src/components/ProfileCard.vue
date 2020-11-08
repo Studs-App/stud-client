@@ -72,7 +72,6 @@ export default class ProfileCard extends Vue {
   public profile!: ProfileData;
 
   beforeMount() {
-
     console.log("MOUNTED: ", this.profile);
   }
 }

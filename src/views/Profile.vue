@@ -8,7 +8,7 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import StudySessionTable from "@/components/StudySessionTable.vue";
-import ProfileCard from "@/components/ProfileCard.vue"; // @ is an alias to /src
+import ProfileCard from "@/components/ProfileCard.vue";
 
 import { namespace } from "vuex-class";
 import { ProfileData } from "@/interfaces/ProfileData";

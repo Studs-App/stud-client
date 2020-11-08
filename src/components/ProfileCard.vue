@@ -84,7 +84,6 @@ export default class ProfileCard extends Vue {
 
   mounted() {
     this.profile = this.profileData;
-    console.log("Profile Component", this.profile);
   }
 }
 </script>

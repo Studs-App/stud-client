@@ -35,7 +35,6 @@ export default class StudySessionTable extends Vue {
 
   mounted() {
     this.studySessions = this.studySessionData;
-    console.log("Component: ", this.studySessions);
   }
 
   tableHandlers: any = [

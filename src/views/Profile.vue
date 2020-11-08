@@ -84,7 +84,8 @@ export default class Profile extends Vue {
       major: "Computer Science",
       school: "CSUN",
       studsCount: "100",
-      pictureUrl: "www.image.com",
+      pictureUrl:
+        "https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
       studyTags: ["Computer Science", "English", "Science"]
     },
     {
@@ -95,7 +96,8 @@ export default class Profile extends Vue {
       major: "Computer Science",
       school: "CSUN",
       studsCount: "100",
-      pictureUrl: "www.image.com",
+      pictureUrl:
+        "https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
       studyTags: ["Computer Science", "English", "Science"]
     },
     {
@@ -106,7 +108,8 @@ export default class Profile extends Vue {
       major: "Computer Science",
       school: "CSUN",
       studsCount: "100",
-      pictureUrl: "www.image.com",
+      pictureUrl:
+        "https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
       studyTags: ["Computer Science", "English", "Science"]
     }
   ];

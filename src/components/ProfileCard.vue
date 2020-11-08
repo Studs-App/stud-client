@@ -96,7 +96,7 @@ import Vue from "vue";
 import Component from "vue-class-component";
 
 import { namespace } from "vuex-class";
-import { ProfileData } from "@/interfaces/ProfileData";
+import { ProfileData } from "@/interfaces/ProfileData.ts";
 
 const profile = namespace("Profile");
 

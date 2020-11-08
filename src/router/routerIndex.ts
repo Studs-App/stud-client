@@ -2,21 +2,32 @@ import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import Home from "../views/Home.vue";
 import Profile from "../views/Profile.vue";
-
-
+import HomeMap from "@/components/HomeMap.vue"
 Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [
   {
     path: "/home",
     name: "Home",
-    component: Home
+    component: Home,
+    children: [
+      {
+        path: "/map",
+        name: "Map",
+        component: HomeMap
+      },
+      {
+        path: "/list",
+        name: "List",
+        component: () =>
+          import(/* webpackChunkName: "List" */ "@/components/HomeList.vue") 
+      }
+    ]
   },
   {
     path: "/profile",
     name: "Profile",
-    component: () =>
-      import(/* webpackChunkName: "Profile" */ "../views/Profile.vue")
+    component: Profile
   },
   {
     path: "/post",

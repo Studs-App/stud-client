@@ -21,7 +21,7 @@ import Vue from "vue";
 import Component from "vue-class-component";
 
 import { namespace } from "vuex-class";
-import { StudySessionData } from "@/interfaces/StudySessionData";
+import { StudySessionData } from "@/interfaces/StudySessionData.ts";
 
 const studySession = namespace("StudySession");
 
@@ -45,14 +45,14 @@ export default class StudySessionTable extends Vue {
       text: "Study Session",
       align: "start",
       sortable: false,
-      value: "title"
+      value: "title",
     },
     { text: "Location", value: "location" },
     { text: "Status", value: "status" },
     { text: "Buds", value: "buds" },
     { text: "Duration", value: "duration" },
     { text: "Date", value: "studyDate" },
-    { text: "", value: "data-table-expand" }
+    { text: "", value: "data-table-expand" },
   ];
 }
 </script>

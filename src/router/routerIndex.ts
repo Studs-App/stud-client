@@ -17,13 +17,13 @@ const routes: Array<RouteConfig> = [
         path: "/map",
         name: "Map",
         component: () =>
-          import(/* webpackChunkName: "Map" */ "@/components/Map.vue")
+          import(/* webpackChunkName: "Map" */ "@/components/HomeMap.vue")
       },
       {
         path: "/list",
         name: "List",
         component: () =>
-          import(/* webpackChunkName: "List" */ "@/components/List.vue") 
+          import(/* webpackChunkName: "List" */ "../components/HomeList.vue") 
       }
     ]
   },

@@ -2,11 +2,12 @@ import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import Home from "../views/Home.vue";
 
+
 Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [
   {
-    path: "/",
+    path: "/home",
     name: "Home",
     component: Home
   },
@@ -18,7 +19,20 @@ const routes: Array<RouteConfig> = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue")
-  }
+  },
+  {
+    path: "/profile",
+    name: "Profile",
+    component: () =>
+      import(/* webpackChunkName: "Profile" */ "../views/Profile.vue")
+  },
+  {
+    path: "/post",
+    name: "CreatePost",
+    component: () =>
+      import(/* webpackChunkName: "CreatePost" */ "../views/CreatePost.vue")
+  },
+
 ];
 
 const router = new VueRouter({

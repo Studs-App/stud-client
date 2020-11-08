@@ -43,9 +43,5 @@ export default class HomeList extends Vue {
     { text: "Date", value: "studyDate" },
     { text: "", value: "data-table-expand" }
   ];
-
-  beforeMount() {
-    console.log("mount: ", this.studySessions);
-  }
 }
 </script>

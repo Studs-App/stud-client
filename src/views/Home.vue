@@ -28,7 +28,7 @@ export default Vue.extend({
   data: () => ({
     options: [
       {
-        name: "HomeMap",
+        name: "Map",
         path: "/map",
       },
       {

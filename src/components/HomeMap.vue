@@ -1,20 +1,19 @@
 <template>
-  <div>
-    <v-row>
-      <static-map
-        :google-api-key="dataValues.apiKey"
-        :format="dataValues.format"
-        :markers="dataValues.markers"
-        :zoom="dataValues.zoom"
-        :center="dataValues.center"
-        :size="dataValues.size"
-        
-        :type="dataValues.type"
-        :paths="dataValues.paths"
-        :language="dataValues.language"
-      ></static-map>
+    <v-row align="center">
+        <v-col align="center">
+            <static-map
+            :google-api-key="dataValues.apiKey"
+            :format="dataValues.format"
+            :markers="dataValues.markers"
+            :zoom="dataValues.zoom"
+            :center="dataValues.center"
+            :size="dataValues.size"
+            :type="dataValues.type"
+            :paths="dataValues.paths"
+            :language="dataValues.language"
+            ></static-map>
+        </v-col>
     </v-row>
-  </div>
 </template>
 
 <script>
@@ -60,6 +59,7 @@ export default Vue.extend({
           icon: "http://www.airsoftmap.net/images/pin_map.png",
         },
       ],
+
       paths: [
         {
           color: "blue",

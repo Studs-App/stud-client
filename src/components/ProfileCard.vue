@@ -11,12 +11,12 @@
         <v-row no-gutters align="center" justify="start">
           <v-col cols="12" sm="4">
             <v-card class="pa-2" elevation="0">
-              <h3>{{ profile.firstName }} {{ profile.lastName }}</h3>
+              <h3>{{ profile.first_name }} {{ profile.last_name }}</h3>
             </v-card>
           </v-col>
           <v-col cols="12" sm="4" align="center" justify="center">
             <v-avatar size="55">
-              <img :src="profile.pictureUrl" />
+              <img :src="profile.picture_url" />
             </v-avatar>
           </v-col>
           <v-col cols="12" sm="4" align="start" justify="end">
@@ -36,7 +36,7 @@
           </v-col>
           <v-col cols="12" sm="4" align="center" justify="center">
             <v-card class="pa-2 " elevation="0">
-              Studs: {{ profile.studsCount }}
+              Buds: {{ profile.budsCount }}
             </v-card>
           </v-col>
           <v-col cols="12" sm="4" align="start" justify="end">
@@ -44,10 +44,10 @@
               <v-btn
                 color="primary"
                 class="pa-1 ma-1"
-                v-for="studyTag in profile.studyTags"
-                :key="studyTag.message"
+                v-for="stud in profile.studs"
+                :key="stud"
               >
-                {{ studyTag }}
+                {{ stud }}
               </v-btn>
             </v-card>
           </v-col>
@@ -58,38 +58,23 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import Component from "vue-class-component";
 import axios from "axios";
+import { Component, Vue } from "vue-property-decorator";
 
 import { namespace } from "vuex-class";
-import { ProfileData } from "@/interfaces/ProfileData";
+import { ProfileData } from "@/interfaces/ProfileData.ts";
 
 const profile = namespace("Profile");
 
 @Component
 export default class ProfileCard extends Vue {
-  public profile: ProfileData = {
-    ID: "",
-    firstName: "",
-    lastName: "",
-    authenticatorId: "",
-    major: "",
-    school: "",
-    studsCount: "",
-    pictureUrl: "",
-    studyTags: [""]
-  };
+  @profile.State(state => state.profileData)
+  public profile!: ProfileData;
 
-  @profile.State(state => state.profileData[0])
-  public profileData!: ProfileData;
-
-  mounted() {
-    this.profile = this.profileData;
-    console.log("Profile Component", this.profile);
+  beforeMount() {
+    console.log("mount: ", this.profile);
   }
 }
 </script>
 
-<style>
-</style>
+<style></style>

@@ -30,7 +30,11 @@
       <v-container>
         <v-row>
           <v-col cols="12" sm="2">
-            <v-sheet rounded="lg" min-height="268"></v-sheet>
+            <v-sheet
+              rounded="lg"
+              min-height="268"
+              v-if="this.$route.path !== '/profile'"
+            ></v-sheet>
           </v-col>
 
           <v-col cols="12" sm="8">
@@ -40,7 +44,11 @@
           </v-col>
 
           <v-col cols="12" sm="2">
-            <v-sheet rounded="lg" min-height="268"></v-sheet>
+            <v-sheet
+              rounded="lg"
+              min-height="268"
+              v-if="this.$route.path !== '/profile'"
+            ></v-sheet>
           </v-col>
         </v-row>
       </v-container>

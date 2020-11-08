@@ -10,7 +10,41 @@
       class="elevation-1"
     >
       <template v-slot:expanded-item="{ headers, item }">
-        <td :colspan="headers.length">More info about {{ item.title }}</td>
+        <td :colspan="headers.length">
+          <v-row no-gutters align="center" justify="start">
+            <v-col cols="12" sm="4">
+              <v-card class="pa-2" elevation="0"
+                ><strong
+                  ><h3>Studied for {{ item.title }}</h3></strong
+                >
+              </v-card>
+            </v-col>
+
+            <v-col cols="12" sm="4" align="center" justify="center">
+              <v-avatar size="55"> </v-avatar>
+            </v-col>
+
+            <v-col cols="12" sm="4" align="start" justify="end">
+              <v-card class="pa-2" elevation="0">
+                <strong>
+                  <p>{{ item.scheduledDate }}</p>
+                </strong></v-card
+              >
+            </v-col>
+            <v-btn x-small class="pa-2" color="primary">
+              {{ item.subject }}
+            </v-btn>
+          </v-row>
+
+          <h4 class="inline-text">Members:</h4>
+          <p class="inline-text" v-for="bud in item.buds" v-bind:key="bud">
+            {{ bud }}
+          </p>
+          <br />
+
+          <h4 class="inline-text">Duration:</h4>
+          <p class="inline-text">10</p>
+        </td>
       </template>
     </v-data-table>
   </v-container>
@@ -49,3 +83,9 @@ export default class StudySessionTable extends Vue {
   }
 }
 </script>
+
+<style>
+.inline-text {
+  display: inline;
+}
+</style>

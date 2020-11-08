@@ -8,13 +8,11 @@ export default class Profile extends VuexModule {
   @Mutation
   setProfileData(profileData: ProfileData[]): void {
     this.profileData = profileData;
-    console.log(this.profileData);
-    console.log("Mutation Statement");
+    console.log("Mutation Statement: ",this.profileData);
   }
 
   @Action({ rawError: true })
   updateProfileData(profileData: ProfileData[]) {
-    this.context.commit('setProfileData', profileData);
+    this.context.commit("setProfileData", profileData);
   }
-
 }

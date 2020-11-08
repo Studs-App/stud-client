@@ -9,6 +9,7 @@
 import { Component, Vue } from "vue-property-decorator";
 import StudySessionTable from "@/components/StudySessionTable.vue";
 import ProfileCard from "@/components/ProfileCard.vue"; // @ is an alias to /src
+import axios from "axios";
 
 import { namespace } from "vuex-class";
 import { ProfileData } from "@/interfaces/ProfileData";
@@ -77,7 +78,7 @@ export default class Profile extends Vue {
 
   profileData: ProfileData[] = [
     {
-      profileId: "1",
+      ID: "1",
       firstName: "Tony",
       lastName: "Nguyen",
       authenticatorId: "2",
@@ -89,7 +90,7 @@ export default class Profile extends Vue {
       studyTags: ["Computer Science", "English", "Science"]
     },
     {
-      profileId: "1",
+      ID: "1",
       firstName: "Tony",
       lastName: "Nguyen",
       authenticatorId: "2",
@@ -101,7 +102,7 @@ export default class Profile extends Vue {
       studyTags: ["Computer Science", "English", "Science"]
     },
     {
-      profileId: "1",
+      ID: "1",
       firstName: "Tony",
       lastName: "Nguyen",
       authenticatorId: "2",
@@ -114,6 +115,8 @@ export default class Profile extends Vue {
     }
   ];
 
+  currentProfileData!: ProfileData;
+
   @profile.Action updateProfileData!: (
     updateProfileData: ProfileData[]
   ) => void;
@@ -122,9 +125,33 @@ export default class Profile extends Vue {
     updateStudySessionData: StudySessionData[]
   ) => void;
 
-  beforeMount() {
-    this.updateProfileData(this.profileData);
-    this.updateStudySessionData(this.studySessionData);
+  @profile.Action updateCurrentProfileData!: (
+    currentProfileData: ProfileData
+  ) => void;
+
+  beforeMounted() {
+    let axiosProfileData: ProfileData = {
+      ID: "",
+      firstName: "",
+      lastName: "",
+      authenticatorId: "",
+      major: "",
+      school: "",
+      studsCount: "",
+      pictureUrl: "",
+      studyTags: [""]
+    };
+    //this.updateProfileData(this.profileData);
+    axios
+      .get("http://127.0.0.1:3030/get/profileById/4")
+      .then(response => (axiosProfileData = response.data))
+      .catch(error => {
+        console.log(error);
+      })
+      .finally(() => {
+        this.updateCurrentProfileData(axiosProfileData);
+        //this.updateStudySessionData(this.studySessionData);
+      });
   }
 }
 </script>

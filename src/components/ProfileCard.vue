@@ -16,7 +16,7 @@
           </v-col>
           <v-col cols="12" sm="4" align="center" justify="center">
             <v-avatar size="55">
-              <img :src="profile.pictureUrl" alt="John" />
+              <img :src="profile.pictureUrl" />
             </v-avatar>
           </v-col>
           <v-col cols="12" sm="4" align="start" justify="end">
@@ -60,6 +60,7 @@
 <script lang="ts">
 import Vue from "vue";
 import Component from "vue-class-component";
+import axios from "axios";
 
 import { namespace } from "vuex-class";
 import { ProfileData } from "@/interfaces/ProfileData";
@@ -69,7 +70,7 @@ const profile = namespace("Profile");
 @Component
 export default class ProfileCard extends Vue {
   public profile: ProfileData = {
-    profileId: "",
+    ID: "",
     firstName: "",
     lastName: "",
     authenticatorId: "",

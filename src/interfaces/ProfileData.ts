@@ -1,5 +1,5 @@
 export interface ProfileData {
-    profileId: string,
+    ID: string,
     firstName: string,
     lastName: string,
     authenticatorId: string,

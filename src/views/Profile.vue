@@ -26,7 +26,7 @@ const studySession = namespace("StudySession");
 export default class Profile extends Vue {
   studySessionData: StudySessionData[] = [
     {
-      title: "Computer Science",
+      title: "Physics",
       location: "Northridge",
       status: "In-Progress",
       buds: ["Josh", "Deion", "Karan"],

@@ -1,15 +1,15 @@
 <template>
-  <div>map</div>
+  <div>
+    <p>hi</p>
+  </div>
 </template>
-
 <script lang="ts">
-import Vue from "vue";
-import Component from "vue-class-component";
+import { Component, Vue } from "vue-property-decorator";
+@Component
 export default class HomeMap extends Vue{
 
 }
 </script>
 
 <style>
-
 </style>

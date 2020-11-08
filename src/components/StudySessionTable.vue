@@ -1,5 +1,5 @@
 <template>
-  <v-container class="spacing-playground pa-6" fluid>
+  <v-container>
     <v-data-table
       :headers="tableHandlers"
       :items="studySessions"
@@ -7,7 +7,7 @@
       item-key="title"
       :items-per-page="5"
       show-expand
-      class="elevation-2"
+      class="elevation-1"
     >
       <template v-slot:expanded-item="{ headers, item }">
         <td :colspan="headers.length">More info about {{ item.title }}</td>
@@ -18,25 +18,17 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { namespace } from "vuex-class";
 import { StudySessionData } from "@/interfaces/StudySessionData.ts";
-
+import { namespace } from "vuex-class";
 const studySession = namespace("StudySession");
 
 @Component
 export default class StudySessionTable extends Vue {
+  @studySession.State(state => state.studySessionData)
+  studySessions!: StudySessionData[];
+
   private expanded: [] = [];
   private singleExpand: false | undefined;
-
-  public studySessions: StudySessionData[] = [];
-
-  @studySession.State(state => state.studySessionData)
-  public studySessionData!: StudySessionData[];
-
-  mounted() {
-    this.studySessions = this.studySessionData;
-  }
-
   tableHandlers: any = [
     {
       text: "Study Session",
@@ -51,5 +43,9 @@ export default class StudySessionTable extends Vue {
     { text: "Date", value: "studyDate" },
     { text: "", value: "data-table-expand" }
   ];
+
+  beforeMount() {
+    console.log("mount: ", this.studySessions);
+  }
 }
 </script>

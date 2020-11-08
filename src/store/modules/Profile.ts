@@ -14,6 +14,7 @@ export default class Profile extends VuexModule {
 
   @Action({ rawError: true })
   updateProfileData(profileData: ProfileData[]) {
-    this.context.commit("setProfileData", profileData);
+    this.context.commit('setProfileData', profileData);
   }
+
 }

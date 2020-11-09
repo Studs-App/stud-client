@@ -15,7 +15,7 @@ export interface NewStudySessionData {
   lattitude: number;
   longitude: number;
   location: string;
-  duration: string;
+  distance: string;
   buds: string[];
   scheduledDate: string;
   isPrivate: boolean;

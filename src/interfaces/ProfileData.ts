@@ -2,7 +2,7 @@ export interface ProfileData {
   ID: number;
   buds: string[];
   description: string[];
-  duration: string;
+  distance: string;
   firstName: string;
   lastName: string;
   pictureUrl: string;

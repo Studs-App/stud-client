@@ -17,7 +17,7 @@
       </v-tabs>
 
       <v-tabs right class="ml-n9" color="white">
-        <v-tab v="profile" :to="profile.path">{{ profile.name }}</v-tab>
+        <v-tab v="profile" to="/profile">{{ profile.firstName }}</v-tab>
       </v-tabs>
       <v-avatar
         class="hidden-sm-and-down"
@@ -62,10 +62,13 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-
+import axios from "axios";
+import { namespace } from "vuex-class";
+import { ProfileData } from "@/interfaces/ProfileData.ts";
 import SuggestBudsCard from "@/components/SuggestBudsCard.vue";
 import RecentFeedCard from "@/components/RecentFeedCard.vue";
 
+const profile = namespace("Profile");
 @Component({
   components: {
     SuggestBudsCard,
@@ -73,6 +76,7 @@ import RecentFeedCard from "@/components/RecentFeedCard.vue";
   }
 })
 export default class App extends Vue {
+  id = 1
   links: any[] = [
     {
       name: "Create Post",
@@ -83,9 +87,25 @@ export default class App extends Vue {
       path: "/home"
     }
   ];
-  profile: any = {
-    name: "Deion",
-    path: "/profile"
+  
+   @profile.Action updateProfileData!: (
+    updateProfileData: ProfileData[]
+  ) => void;
+
+  @profile.State(state => state.profileData[0])
+    public profile!: ProfileData;
+
+  created() {
+     axios
+      .get(`http://localhost:3030/get/profileById/${this.id}`)
+      .then(response => {
+        this.updateProfileData(response.data);
+      })
+      .catch(error => {
+        console.log("ERROR: ", error);
+      });
+  }
   };
-}
+
+
 </script>

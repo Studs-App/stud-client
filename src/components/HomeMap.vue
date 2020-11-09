@@ -30,7 +30,7 @@ export default Vue.extend({
       dataValues: {
         apiKey: "AIzaSyD75yziFepXfsT_zyNAuaAPSxUNVLlYK-w", 
         zoom: 13, 
-        center: "Brooklyn+Bridge,New+York,NY",
+        center: "Northridge,CA",
         format: "gif",
         language: "en",
       },
@@ -39,27 +39,26 @@ export default Vue.extend({
         {
           label: "B",
           color: "blue",
-          lat: 40.702147,
-          lng: -74.015794,
+          lat: 34.24167,
+          lng: -118.52833,
           size: "normal",
         },
         {
           label: "Y",
           color: "yellow",
-          lat: 40.711614,
-          lng: -74.012318,
+          lat: 34.24167,
+          lng: -118.52833,
           size: "tiny",
         },
         {
           label: "G",
           color: "green",
-          lat: 40.718217,
-          lng: -74.015794,
+          lat: 34.24167,
+          lng: -118.52833,
           size: "small",
           icon: "http://www.airsoftmap.net/images/pin_map.png",
         },
       ],
-
       paths: [
         {
           color: "blue",
@@ -67,10 +66,10 @@ export default Vue.extend({
           geodesic: false,
           fillcolor: "0xFFFF0033",
           locations: [
-            { startLat: 40.737102, endLng: -73.990318 },
-            { startLat: 40.749825, endLng: -73.987963 },
-            { startLat: 40.752946, endLng: -73.987384 },
-            { startLat: 40.762946, endLng: -73.997399 },
+            { startLat: 34.24167, endLng: -118.52833 },
+            { startLat: 34.29029, endLng: 118.59788},
+            { startLat: 34.34029, endLng: -118.65788 },
+            { startLat: 34.39029, endLng: 118.82788},
           ],
         },
       ],

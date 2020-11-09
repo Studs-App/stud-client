@@ -36,15 +36,7 @@ export default class Profile extends Vue {
   ) => void;
 
   created() {
-    axios
-      .get(`http://localhost:3030/get/profileById/${this.id}`)
-      .then(response => {
-        this.updateProfileData(response.data);
-      })
-      .catch(error => {
-        console.log("ERROR: ", error);
-      });
-
+  
     axios
       .get("http://localhost:3030/get/studySession/all")
       .then(response => {

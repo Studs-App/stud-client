@@ -18,7 +18,7 @@
 
       <v-tabs right class="ml-n9" color="white">
         <v-tab v="profile" :to="profile.path">{{
-          profileData.first_name
+          profileData.firstName
         }}</v-tab>
       </v-tabs>
       <v-avatar
